@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080706">
+<meta name="description" content="Una pequeña habitación llena de recuerdos.">
+<title>Una noche especial</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="song" src="assets/cancion.mp3" preload="auto" loop></audio>
+<main id="experience" class="scene scene-dark">
+  <div class="grain" aria-hidden="true"></div>
+  <section id="intro" class="intro" aria-label="Comienzo">
+    <p class="whisper" id="introHint">hay algo que quiero mostrarte...</p>
+    <button id="lampButton" class="lamp-button" aria-label="Encender la lámpara" title="Encender la lámpara">
+      <span class="lamp-glow"></span>
+      <svg class="lamp-icon" viewBox="0 0 100 130" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="shadeMetal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#705033"/><stop offset=".22" stop-color="#c4a174"/><stop offset=".48" stop-color="#f1dfb9"/><stop offset=".72" stop-color="#c5a070"/><stop offset="1" stop-color="#65452d"/></linearGradient>
+          <linearGradient id="lampStemMetal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#58402a"/><stop offset=".45" stop-color="#d2b184"/><stop offset=".72" stop-color="#8b6b45"/><stop offset="1" stop-color="#47301f"/></linearGradient>
+          <radialGradient id="lampLight"><stop stop-color="#fff8d8"/><stop offset=".55" stop-color="#ffe4a0"/><stop offset="1" stop-color="#e7b96b"/></radialGradient>
+        </defs>
+        <ellipse cx="50" cy="117" rx="28" ry="7" fill="#000" opacity=".28"/>
+        <path d="M29 13 Q50 0 71 13 L84 48 Q50 62 16 48 Z" fill="url(#shadeMetal)" stroke="#e5d0a8" stroke-width="1.5"/>
+        <path d="M21 43 Q50 55 79 43 L84 49 Q50 66 16 49Z" fill="#8d6943" stroke="#d6b98b" stroke-width="1"/>
+        <ellipse cx="50" cy="47" rx="33" ry="7" fill="#f9e2ac" opacity=".65"/>
+        <ellipse cx="50" cy="51" rx="24" ry="4" fill="url(#lampLight)"/>
+        <path d="M47 57 L47 96 L39 108 L61 108 L53 96 L53 57Z" fill="url(#lampStemMetal)" stroke="#5c422b" stroke-width=".8"/>
+        <ellipse cx="50" cy="111" rx="25" ry="7" fill="#4a321f"/>
+        <ellipse cx="50" cy="109" rx="23" ry="6" fill="url(#shadeMetal)"/>
+        <path d="M25 18 Q50 5 75 18" fill="none" stroke="#fff7e3" stroke-width="2" opacity=".8"/>
+      </svg>
+      <span class="lamp-label">encendé la luz</span>
+    </button>
+    <p class="sound-note" id="soundNote">Tocá la lámpara para comenzar</p>
+  </section>
+
+  <section id="room" class="room" aria-label="La habitación" aria-hidden="true">
+    <div class="room-back-wall"></div>
+    <div class="ceiling"></div>
+    <div class="floor"></div>
+    <div class="side-wall"></div>
+    <div class="lamp-beam"></div>
+    <div class="room-lamp" aria-hidden="true">
+      <div class="shade"></div><div class="bulb"></div><div class="lamp-stem"></div><div class="lamp-base"></div>
+    </div>
+    <div class="dresser">
+      <div class="drawer"></div><div class="drawer"></div><div class="dresser-top"></div>
+    </div>
+    <div class="board-teaser">
+      <div class="teaser-string"></div>
+      <span class="teaser-photo p1"></span><span class="teaser-photo p2"></span><span class="teaser-photo p3"></span>
+      <span class="teaser-photo p4"></span><span class="teaser-photo p5"></span>
+    </div>
+    <div class="room-copy">
+      <p class="eyebrow">un lugar para nuestros recuerdos</p>
+      <h1>Un pedacito<br>de nosotros.</h1>
+      <p class="room-subtitle">Hay momentos que merecen quedarse un ratito más.</p>
+      <button id="approachButton" class="soft-button">Acercarme al tablero <span>↗</span></button>
+    </div>
+  </section>
+
+  <section id="boardView" class="board-view" aria-label="Tablero de fotografías" aria-hidden="true">
+    <header class="board-header">
+      <p class="eyebrow">pequeños instantes, grandes recuerdos</p>
+      <h2>Nuestros recuerdos</h2>
+      <p class="board-description">Dieciséis fotografías, un video y diecisiete recuerdos para volver a vivir.</p>
+    </header>
+    <div class="wood-board memory-grid">
+      <div class="string string-one"></div>
+      <div class="string string-two"></div>
+      <div class="string string-three"></div>
+      <button class="photo-card memory-card tilt-left" data-photo="0" aria-label="Ampliar fotografía 1">
+        <span class="clip"></span><img src="assets/foto-01.jpg" alt="Fotografía juntos, momento 1"><span class="photo-caption">ese momento</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="1" aria-label="Ampliar fotografía 2">
+        <span class="clip"></span><img src="assets/foto-02.jpg" alt="Fotografía juntos, momento 2"><span class="photo-caption">con vos</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="2" aria-label="Ampliar fotografía 3">
+        <span class="clip"></span><img src="assets/foto-03.jpg" alt="Fotografía juntos, momento 3"><span class="photo-caption">un día más</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="3" aria-label="Ampliar fotografía 4">
+        <span class="clip"></span><img src="assets/foto-04.jpg" alt="Fotografía juntos, momento 4"><span class="photo-caption">mi favorito</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="4" aria-label="Ampliar fotografía 5">
+        <span class="clip"></span><img src="assets/foto-05.jpg" alt="Fotografía juntos, nuevo recuerdo"><span class="photo-caption">otro instante con vos</span>
+      </button>
+      <div class="photo-card memory-card video-memory">
+        <span class="clip"></span><video src="assets/recuerdo-video-01.mp4" controls playsinline preload="metadata" aria-label="Video de un recuerdo"></video><span class="photo-caption">un recuerdo en movimiento</span>
+      </div>
+      <button class="photo-card memory-card tilt-left" data-photo="5" aria-label="Ampliar fotografía 6">
+        <span class="clip"></span><img src="assets/foto-06.jpg" alt="Fotografía juntos, momento 6"><span class="photo-caption">un recuerdo más</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="6" aria-label="Ampliar fotografía 7">
+        <span class="clip"></span><img src="assets/foto-07.jpg" alt="Fotografía juntos, momento 7"><span class="photo-caption">siempre con vos</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="7" aria-label="Ampliar fotografía 8">
+        <span class="clip"></span><img src="assets/foto-08.jpg" alt="Fotografía juntos, momento 8"><span class="photo-caption">un día para guardar</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="8" aria-label="Ampliar fotografía 9">
+        <span class="clip"></span><img src="assets/foto-09.jpg" alt="Fotografía juntos, momento 9"><span class="photo-caption">otro recuerdo con vos</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="9" aria-label="Ampliar fotografía 10">
+        <span class="clip"></span><img src="assets/foto-10.jpg" alt="Fotografía juntos, momento 10"><span class="photo-caption">de esos momentos únicos</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="10" aria-label="Ampliar fotografía 11">
+        <span class="clip"></span><img src="assets/foto-11.jpg" alt="Fotografía juntos, momento 11"><span class="photo-caption">juntos es mejor</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="11" aria-label="Ampliar fotografía 12">
+        <span class="clip"></span><img src="assets/foto-12.jpg" alt="Fotografía juntos, momento 12"><span class="photo-caption">una sonrisa más</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="12" aria-label="Ampliar fotografía 13">
+        <span class="clip"></span><img src="assets/foto-13.jpg" alt="Fotografía juntos, momento 13"><span class="photo-caption">un instante especial</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="13" aria-label="Ampliar fotografía 14">
+        <span class="clip"></span><img src="assets/foto-14.jpg" alt="Fotografía juntos, momento 14"><span class="photo-caption">nuestro pequeño mundo</span>
+      </button>
+      <button class="photo-card memory-card tilt-right" data-photo="14" aria-label="Ampliar fotografía 15">
+        <span class="clip"></span><img src="assets/foto-15.jpg" alt="Fotografía juntos, momento 15"><span class="photo-caption">momentos que atesoro</span>
+      </button>
+      <button class="photo-card memory-card tilt-left" data-photo="15" aria-label="Ampliar fotografía 16">
+        <span class="clip"></span><img src="assets/foto-16.jpeg" alt="Fotografía juntos, momento 16"><span class="photo-caption">siempre hay más recuerdos</span>
+      </button>
+    </div>
+    <button id="backButton" class="soft-button back-button">Volver a la habitación <span>↶</span></button>
+    <p class="footer-note">hecho con cariño, para vos ♡</p>
+  </section>
+</main>
+
+<div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="Fotografía ampliada" hidden>
+  <button id="closeModal" class="modal-close" aria-label="Cerrar fotografía">×</button>
+  <img id="modalImage" src="" alt="Fotografía ampliada">
+  <p id="modalCaption"></p>
+</div>
+<div id="audioNotice" class="audio-notice" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
